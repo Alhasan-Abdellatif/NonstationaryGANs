@@ -109,8 +109,8 @@ else:
 
 # Parallel GPU if ngpu > 1
 if (device.type == 'cuda') and (args.ngpu > 1):
-    netG = nn.DataParallel(netG, list(range(ngpu)))
-    netD = nn.DataParallel(netD, list(range(ngpu)))
+    netG = nn.DataParallel(netG, list(range(args.ngpu)))
+    netD = nn.DataParallel(netD, list(range(args.ngpu)))
 
 #settings for losses
 if loss_fun == 'standard':
